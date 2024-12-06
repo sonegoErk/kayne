@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'package:kaynewest/style/colors.dart';
 
 class Principal extends StatefulWidget {
   const Principal({super.key});
@@ -38,8 +39,16 @@ class _PrincipalState extends State<Principal> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Frases do Kanye West"),
+        backgroundColor: AppColors.preto,
+        automaticallyImplyLeading: false, // Remove a seta de voltar
+        title: const Center(
+          child: Text(
+            "Frases do Kanye West",
+            style: TextStyle(color: AppColors.branco),
+          ),
+        ),
       ),
+      backgroundColor: AppColors.preto,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -49,12 +58,22 @@ class _PrincipalState extends State<Principal> {
               child: Text(
                 _quote,
                 textAlign: TextAlign.center,
-                style: const TextStyle(fontSize: 18),
+                style: const TextStyle(
+                  fontSize: 18,
+                  color: Colors.white, // Cor da fonte
+                ),
               ),
             ),
             ElevatedButton(
               onPressed: _fetchQuote,
-              child: const Text(""),
+              style: ElevatedButton.styleFrom(
+                padding: EdgeInsets.zero,
+                elevation: 0,
+                backgroundColor: Colors.transparent,
+                shape: const RoundedRectangleBorder(
+                  borderRadius: BorderRadius.zero),
+              ),
+              child: Image.asset('assets/images/bear.png'),
             ),
           ],
         ),

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:kaynewest/Provider/respostaprovider.dart';
 import 'package:kaynewest/pages/homepage.dart';
 import 'package:kaynewest/pages/principal.dart';
-import 'package:provider/provider.dart'; // Import necessário
+import 'package:provider/provider.dart'; 
 
 void main() {
   runApp(
